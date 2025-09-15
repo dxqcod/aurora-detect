@@ -10,10 +10,10 @@
 
 <p align="center">
   <a href="docs/photos/aurora1.jpg">
-    <img src="docs/photos/aurora1.jpg" width="500" />
+    <img src="docs/photos/aurora1.jpg" width="400" />
   </a>
   <a href="docs/photos/aurora3.jpg">
-    <img src="docs/photos/aurora3.jpg" width="500" />
+    <img src="docs/photos/aurora3.jpg" width="400" />
   </a>
 </p>
 
