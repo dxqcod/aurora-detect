@@ -169,7 +169,7 @@ pip3 install requests
 Запустить timelapse-съёмку:
 ```bash
 bash scripts/timelaps.sh
-
+```
 
 Запустить демон color-detect (бесконечный цикл, проверяет foto_ready.txt):
 
