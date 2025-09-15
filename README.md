@@ -36,7 +36,7 @@
 ```lora-dx/
 ├── README.md                # Основное описание проекта
 ├── docs/                    # Подробные описания, схемы
-│   ├── description.pdf
+│   ├── algoritm.jpg
 │   └── photos/
 │
 ├── hardware/                # Аппаратная часть
