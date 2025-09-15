@@ -186,7 +186,7 @@ bash scripts/create_vid.sh
 python3 scripts/video_print_vk_auto.py
 ```
 
-Что делает timelaps.sh
+#### Что делает timelaps.sh
 
 timelaps.sh — основной цикл съёмки и подготовки кадра для анализа:
 
