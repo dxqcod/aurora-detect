@@ -35,14 +35,22 @@
 
 ## 🎥 Деморолик
 
-[![Смотреть деморолик](docs/photos/demo.jpg)](https://vk.com/video-168611621_456240067)
+<p align="center">
+  <a href="https://youtu.be/vGRuUc-uzyM?si=02ci5hA4gs9bYRed" target="_blank">
+    <img src="docs/photos/demo.jpg" width="400" />
+  </a>
+  <a href="https://vk.com/video-168611621_456240067" target="_blank">
+    <img src="docs/photos/demo.jpg" width="400" />
+  </a>
+</p>
 
-
+---
 
 ## 📌 Сообщество проекта
 
 Все публикации timelapse доступны в группе ВКонтакте:  
 👉 [vk.com/public168611621](https://vk.com/public168611621)
+
 
 ---
 
