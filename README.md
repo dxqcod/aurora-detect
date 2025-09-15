@@ -223,8 +223,8 @@ foto_bright.txt — содержит значение яркости (испол
 
 ---
 
-#### Примеры: cron 
-Конструкция crontab (для периодического запуска):
+
+#### Конструкция crontab (для периодического запуска):
 ```bash
 @reboot /bin/bash /home/pi/repo/scripts/timelaps.sh >> /home/pi/logs/timelaps.log 2>&1
 ```
