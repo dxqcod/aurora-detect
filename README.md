@@ -46,10 +46,10 @@
 │   └── wiring-diagrams.png/           # Схема пульта управления
 │
 ├── firmware/                # Код для контроллеров
-│   ├── controller/          
-│   │   └── controller.ino   # Блок управления ретранслятором
-│   ├── remote/              
-│   │   └── remote.ino       # Пульт управления
+│   └── autostart.ino   # Блок управления ретранслятором
+│   └── controller.ino   # Блок управления ретранслятором
+│   └── controller.ino   # Блок управления ретранслятором
+│      
 ├── LICENSE                  # Лицензия 
 │
 └── .gitignore
