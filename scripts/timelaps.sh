@@ -1,87 +1,77 @@
 #!/bin/bash
-# сообщаем, что собираемся использовать оболочку bash
+# СЃРѕРѕР±С‰Р°РµРј, С‡С‚Рѕ СЃРѕР±РёСЂР°РµРјСЃСЏ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ РѕР±РѕР»РѕС‡РєСѓ bash
 
-#задаем в цикле сколько фото хотим получить -10000 (переменная i) 
-#переменная "к" добавлят номер к фото от 1 до 5
-#br пепеменная яркост
+# Р·Р°РґР°С‘Рј РІ С†РёРєР»Рµ СЃРєРѕР»СЊРєРѕ С„РѕС‚Рѕ С…РѕС‚РёРј РїРѕР»СѓС‡РёС‚СЊ вЂ“ 1000000 (РїРµСЂРµРјРµРЅРЅР°СЏ i) 
+# РїРµСЂРµРјРµРЅРЅР°СЏ "k" РґРѕР±Р°РІР»СЏРµС‚ РЅРѕРјРµСЂ Рє С„РѕС‚Рѕ РѕС‚ 1 РґРѕ 5
+# bright вЂ“ РїРµСЂРµРјРµРЅРЅР°СЏ СЏСЂРєРѕСЃС‚Рё
 k=1
 bright=99
 for ((i=1; i<1000000; i++))
 do
 
-#выводим на экран "к"
-echo "k= -$k-  "
+    # РІС‹РІРѕРґРёРј РЅР° СЌРєСЂР°РЅ "k"
+    echo "k= -$k-  "
 
-#выводим на экран "i"
-echo "i= -$i-  "
+    # РІС‹РІРѕРґРёРј РЅР° СЌРєСЂР°РЅ "i"
+    echo "i= -$i-  "
 
+    # РґРµР»Р°РµРј РєРѕРЅС‚СЂРѕР»СЊРЅС‹Р№ СЃРЅРёРјРѕРє
+    raspistill -o /media/pi/Transcend/time/bright.jpg -n 
 
+    # РѕРїСЂРµРґРµР»СЏРµРј СЏСЂРєРѕСЃС‚СЊ РєР°СЂС‚РёРЅРєРё (С‡Р°СЃС‚СЊ СѓС‚РёР»РёС‚С‹ ImageMagick)
+    br=$(identify -verbose /media/pi/Transcend/time/bright.jpg  | grep exif:BrightnessValue: | awk '{b=$2}END{printf (b)}')
+    bright=$(echo $br | cut -d/ -f1)
+    echo -n "  bright= $bright   "
 
-#делаем контролный снимок
-raspistill -o /media/pi/Transcend/time/bright.jpg -n 
+    # С„РѕСЂРјРёСЂСѓРµРј РїРµСЂРµРјРµРЅРЅС‹Рµ РґР°С‚С‹ Рё РІСЂРµРјРµРЅРё, РїСЂРёРјРµСЂ: 2018-07-12_101219---1
+    DATE=$(date +"%Y-%m-%d_%H%M%S---$k")
+    TIMESREEN=$(date +"%H:%M")
+    DATESREEN=$(date +"%m-%d")
 
-# opredelyaem yrkost kartinki (chast utility imagemagick)
-br=$(identify -verbose /media/pi/Transcend/time/bright.jpg  | grep exif:BrightnessValue: | awk '{b=$2}END{printf (b)}')
-bright=$(echo $br | cut -d/ -f1)
-echo -n "  bright= $bright   "
+    # РІС‹РІРѕРґРёРј РЅР° СЌРєСЂР°РЅ РёРјСЏ С„Р°Р№Р»Р°
+    echo -n $DATE
 
-# формируем название фото в формате 2018-07-12_101219- - -1
-DATE=$(date +"%Y-%m-%d_%H%M%S---$k")
-TIMESREEN=$(date +"%H:%M")
-DATESREEN=$(date +"%m-%d")
+    # РґРµР»Р°РµРј СЃРЅРёРјРѕРє Рё СЃРѕС…СЂР°РЅСЏРµРј РµРіРѕ РІ РїР°РїРєСѓ timelaps
+    # РµСЃР»Рё СЏСЂРєРѕСЃС‚СЊ РјРµРЅСЊС€Рµ РїРѕСЂРѕРіР° вЂ“ СЃРЅРёРјР°РµРј РЅРѕС‡СЊСЋ, РёРЅР°С‡Рµ РґРЅС‘Рј
+    if [[ "$bright" -le 10 ]]
+    then
+        raspistill -ex auto -ss 2000000 -ISO 800  -o /media/pi/Transcend/time/timelaps/$DATE.jpg -n 
+        echo -n "     night     "
+    else
+        raspistill -co 20 -sa 10 -o /media/pi/Transcend/time/timelaps/$DATE.jpg -n 
+        echo -n "     day     "
+        #sleep 20s
+    fi
 
-# выводим на экран название фото
-echo -n $DATE
+    # СЃС‡РёС‚С‹РІР°РµРј С‚РµРјРїРµСЂР°С‚СѓСЂСѓ СЃ РґР°С‚С‡РёРєР°
+    temp=$(cat /sys/bus/w1/devices/10-000802816d5c/w1_slave | sed -n 's/^.*\(t=[^ ]*\).*/\1/p' | sed 's/t=//' | awk '{x=$1}END{printf ("%.1f", (x/1000))}')
 
+    # РґРѕР±Р°РІР»СЏРµРј watermark Рё РїРѕРґРїРёСЃРё
+    convert -composite /media/pi/Transcend/time/timelaps/$DATE.jpg \
+        /media/pi/Transcend/time/5.png  -geometry +3100+10 \
+        -fill white \
+        -font Helvetica-Bold -pointsize 40 \
+        -annotate +3030+2350 "time - " \
+        -annotate +3150+2350 "$TIMESREEN" \
+        -annotate +3030+2400 "date - " \
+        -annotate +3150+2400 "$DATESREEN" \
+        -annotate +3030+2300 "temp=" \
+        -annotate +3150+2300 "$temp" \
+        /media/pi/Transcend/time/timelaps/$DATE.jpg
 
-# делаем снимок и сохраняем его в папке timelaps
-# если снимок темный то выдержка болше, если светлый то авто
-if [[ "$bright" -le 10 ]]
-then
-raspistill -ex auto -ss 2000000 -ISO 800  -o /media/pi/Transcend/time/timelaps/$DATE.jpg -n #--annotate  $DATESREEN -ae +35+35  -ex auto -ss 2900000 
-echo -n "     night     "
+    # СЃРѕР·РґР°С‘Рј РјР°СЂРєРµСЂРЅС‹Рµ С„Р°Р№Р»С‹ РґР»СЏ СЃРєСЂРёРїС‚Р° color.sh
+    echo "$DATE"  > /media/pi/Transcend/time/color_detect/foto_ready.txt
+    echo "$bright" > /media/pi/Transcend/time/color_detect/foto_bright.txt
 
-else
-raspistill -co 20 -sa 10 -o /media/pi/Transcend/time/timelaps/$DATE.jpg -n 
-echo -n "     day     "
+    # С†РёРєР» СѓРІРµР»РёС‡РµРЅРёСЏ РїРµСЂРµРјРµРЅРЅРѕР№ "k" РѕС‚ 1 РґРѕ 5
+    # С‡С‚РѕР±С‹ РёРјСЏ РґР»СЏ timelaps РїРѕРІС‚РѕСЂСЏР»РѕСЃСЊ РєР°Р¶РґС‹Рµ 5 РєР°РґСЂРѕРІ
+    if [[ "$k" -ge 5 ]]
+    then 
+        k=0
+    fi
+    echo " -ok"
+    k=$((k+1))
 
-#sleep 20s
-fi
-
-
-#schityvaem temperaturu s datchika
-temp=$(cat /sys/bus/w1/devices/10-000802816d5c/w1_slave | sed -n 's/^.*\(t=[^ ]*\).*/\1/p' | sed 's/t=//' | awk '{x=$1}END{printf ("%.1f", (x/1000))}')
-
-
-
-
-
-#echo конвертируем фото
-#echo -n $DATE
-convert -composite /media/pi/Transcend/time/timelaps/$DATE.jpg \
-	/media/pi/Transcend/time/5.png  -geometry +3100+10 \
-	-fill white \
-	-font Helvetica-Bold -pointsize 40 \
-	-annotate +3030+2350 "time - " \
-	-annotate +3150+2350 "$TIMESREEN" \
-	-annotate +3030+2400 "date - " \
-	-annotate +3150+2400 "$DATESREEN" \
-	-annotate +3030+2300 "temp=" \
-	-annotate +3150+2300 "$temp" \
-	/media/pi/Transcend/time/timelaps/$DATE.jpg
-# создаем маркерный фаил для скрипта color.sh
-echo "$DATE"  > /media/pi/Transcend/time/color_detect/foto_ready.txt
-echo "$bright" > /media/pi/Transcend/time/color_detect/foto_bright.txt
-
-# задаем цикл для смены переменной "к" от 1 до 5
-# это нужно для timelaps с разной скоростью
-if [[ "$k" -ge 5 ]]
-then 
-k=0
-fi
-echo " -ok"
-k=$((k+1))
-
-# пауза 30 секунд
-#sleep 30s
+    # РїР°СѓР·Р° 30 СЃРµРєСѓРЅРґ РјРµР¶РґСѓ РєР°РґСЂР°РјРё
+    #sleep 30s
 done
