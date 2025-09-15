@@ -258,7 +258,7 @@ python3 scripts/video_print_vk_auto.py
 ```bash
 @reboot /bin/bash /home/pi/repo/scripts/timelaps.sh >> /home/pi/logs/timelaps.log 2>&1
 ```
----
+
 <br>
 
 ---
