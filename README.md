@@ -47,8 +47,8 @@
 ---
 <br>
 
-## 📌 Сообщество проекта
-## 📸 Примеры наблюдений
+## 📌 
+## 📸 Примеры наблюдений и сообщество проекта
 
 <div align="center">
 
@@ -57,21 +57,8 @@
 | Полярное сияние                                  | Метеор                                          | Лунное гало                                   |
 
 
-
-
 <br>
 
-<p align="center">
-  <a href="docs/photos/aurora2.jpg">
-    <img src="docs/photos/aurora2.jpg" width="200" />
-  </a>
-  <a href="docs/photos/meteor.jpg">
-    <img src="docs/photos/meteor.jpg" width="200" />
-  </a>
-    <a href="docs/photos/galo.jpg">
-    <img src="docs/photos/galo.jpg" width="200" />
-  </a>
-</p>
 
 Эти и другие публикации timelapse доступны в группе ВКонтакте:  
 👉 [vk.com/public168611621](https://vk.com/public168611621)
