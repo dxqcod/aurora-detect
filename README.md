@@ -10,8 +10,8 @@
 
 
 <p align="center">
-  <a href="docs/photos/front_view_comments.jpg">
-    <img src="docs/photos/front_view_comments.jpg" width="400" />
+  <a href="docs/photos/aurora1.jpg">
+    <img src="docs/photos/aurora1.jpg" width="600" />
   </a>
 </p>
 
