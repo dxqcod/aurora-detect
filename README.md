@@ -40,19 +40,17 @@
 │   ├── algoritm.jpg
 │   └── photos/
 │
-├── hardware/                # Аппаратная часть
-│   ├── schematics/          # Схемы подключения (из текста + изображения)
-│   │   └── text-scheme-controller.md # Текстовая схема подключения блока управления
-│   │   └── text-scheme-remote.md # Текстовая схема подключения пульта управления
-│   └── wiring-diagrams.png/           # Схема пульта управления
+├── scripts/
+│   ├── timelaps.sh
+│   ├── color_detect.sh
+│   ├── color.sh
+│   ├── create_vid.sh
+│   ├── temp.sh
+│   └── video_print_vk_auto.py
 │
-├── firmware/                # Код для контроллеров
-│   └── autostart.ino   # Блок управления ретранслятором
-│   └── controller.ino   # Блок управления ретранслятором
-│   └── controller.ino   # Блок управления ретранслятором
-│      
+├── assets/
+│   └── watermark.png  
 ├── LICENSE                  # Лицензия 
-│
 └── .gitignore
 ```
 ---
