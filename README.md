@@ -33,7 +33,7 @@
 
 ---
 
-## 🎥 Деморолик
+## 🎥 Деморолик, собранный по итогам года работы
 
 <p align="center">
   <a href="https://youtu.be/vGRuUc-uzyM?si=02ci5hA4gs9bYRed" target="_blank">
