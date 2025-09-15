@@ -15,6 +15,9 @@
   </a>
 </p>
 
+| Вид спереди | Вид внутри |
+|-------------|------------|
+| [![front](docs/photos/aurora1.jpg)](docs/photos/aurora1.jpg) | [![inside](docs/photos/aurora2.jpg)](docs/photos/aurora2.jpg) |
 
 ---
 
