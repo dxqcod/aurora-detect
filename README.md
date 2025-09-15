@@ -162,6 +162,35 @@ sudo apt update
 sudo apt install -y imagemagick mencoder ffmpeg ntpdate python3-pip
 pip3 install requests
 
+
+### Запуск вручную и автозапуск
+## Ручной запуск
+
+Запустить timelapse-съёмку:
+
+bash scripts/timelaps.sh
+
+
+Запустить демон color-detect (бесконечный цикл, проверяет foto_ready.txt):
+
+bash scripts/color_detect.sh
+
+
+Сгенерировать видео (ручной запуск скрипта сборки):
+
+bash scripts/create_vid.sh
+
+
+Загрузить видео в ВК (python-скрипт):
+
+python3 scripts/video_print_vk_auto.py
+
+Что делает timelaps.sh
+
+Делает кадр raspistill, определяет яркость (identify) и в зависимости от яркости выставляет параметры съемки (ночной/дневной). Затем с помощью ImageMagick добавляет watermark и текст (время/дата/температура). После создания кадра кладёт маркер foto_ready.txt и foto_bright.txt для color_detect.sh. 
+
+timelaps
+
 ---
 ## ⚖️ Лицензия
 Проект распространяется под лицензией [MIT](LICENSE).
