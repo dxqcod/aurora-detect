@@ -55,7 +55,7 @@
 └── .gitignore
 ```
 ---
-## 🔌Алгоритм взаимодействия различных частей программы 
+## 🔢 Алгоритм взаимодействия различных частей программы 
 <p align="center">
   <a href="docs/algoritm.jpg">
     <img src="docs/algoritm.jpg" width="1000" />
