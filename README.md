@@ -145,6 +145,7 @@
 ```bash
 # Автозапуск диагностики timelapse
 /home/pi/start.sh
+```
 
 ---
 
