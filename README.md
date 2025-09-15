@@ -143,7 +143,26 @@
 - Камера, совместимая с raspistill
 - Датчик температуры (1-wire), например DS18B20 (ваш скрипт читает /sys/bus/w1/devices/10-.../w1_slave).
 - Накопитель (SD/USB) для хранения снимков/видео
-  
+
+---
+### Зависимости (ПО)
+
+Необходимые пакеты на Raspberry Pi для функционирования устройства:
+
+- raspistill (часть raspicam) — съемка
+- imagemagick — обработка изображений (convert, identify). Скрипты активно используют convert и identify.
+- mencoder (в текущей реализации используется для сборки видео) или ffmpeg (рекомендую перейти на ffmpeg).
+- python3, pip3
+- Python: requests (использует video_print_vk_auto.py).
+- ntpdate (используется для синхронизации времени в temp.sh). 
+
+Пример установки (Raspbian / Debian):
+
+sudo apt update
+sudo apt install -y imagemagick mencoder ffmpeg ntpdate python3-pip
+pip3 install requests
+
+---
 ## ⚖️ Лицензия
 Проект распространяется под лицензией [MIT](LICENSE).
 
