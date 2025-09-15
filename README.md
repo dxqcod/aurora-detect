@@ -40,7 +40,7 @@
     <img src="docs/photos/demo_youtube.png" width="400" />
   </a>
   <a href="https://vk.com/video-168611621_456240067" target="_blank">
-    <img src="docs/photos/demo_vk.png" width="400" />
+    <img src="docs/photos/demo-vk.png" width="400" />
   </a>
 </p>
 
