@@ -7,10 +7,20 @@
 Основано на **Raspberry**.  
 
 
-|-------------|------------|
-| [![front](docs/photos/aurora1.jpg)](docs/photos/aurora1.jpg) | [![inside](docs/photos/aurora3.jpg)](docs/photos/aurora3.jpg) |
+
+<p align="center">
+  <a href="docs/photos/aurora1.jpg">
+    <img src="docs/photos/aurora1.jpg" width="300" />
+  </a>
+  <a href="docs/photos/aurora3.jpg">
+    <img src="docs/photos/aurora3.jpg" width="300" />
+  </a>
+</p>
 
 ---
+
+
+
 
 ## ✨ Возможности
 - Автоматическая сьемка участка неба через равные промежутки времени.
