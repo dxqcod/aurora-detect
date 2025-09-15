@@ -7,17 +7,8 @@
 Основано на **Raspberry**.  
 
 
-
-
-<p align="center">
-  <a href="docs/photos/aurora1.jpg">
-    <img src="docs/photos/aurora1.jpg" width="600" />
-  </a>
-</p>
-
-| Вид спереди | Вид внутри |
 |-------------|------------|
-| [![front](docs/photos/aurora1.jpg)](docs/photos/aurora1.jpg) | [![inside](docs/photos/aurora2.jpg)](docs/photos/aurora2.jpg) |
+| [![front](docs/photos/aurora1.jpg)](docs/photos/aurora1.jpg) | [![inside](docs/photos/aurora3.jpg)](docs/photos/aurora3.jpg) |
 
 ---
 
