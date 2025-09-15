@@ -221,8 +221,13 @@ foto_ready.txt — содержит имя готового файла (триг
 
 foto_bright.txt — содержит значение яркости (используется при принятии решения).
 
+---
 
-
+#### Примеры: cron 
+Конструкция crontab (для периодического запуска):
+```bash
+@reboot /bin/bash /home/pi/repo/scripts/timelaps.sh >> /home/pi/logs/timelaps.log 2>&1
+```
 ---
 ## ⚖️ Лицензия
 Проект распространяется под лицензией [MIT](LICENSE).
