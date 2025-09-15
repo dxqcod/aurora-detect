@@ -56,6 +56,9 @@
   <a href="docs/photos/meteor.jpg">
     <img src="docs/photos/meteor.jpg" width="200" />
   </a>
+    <a href="docs/photos/galo.jpg">
+    <img src="docs/photos/metgalo.jpg" width="200" />
+  </a>
 </p>
 
 Эти и другие публикации timelapse доступны в группе ВКонтакте:  
