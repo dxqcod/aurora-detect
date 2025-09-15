@@ -49,6 +49,15 @@
 
 ## 📌 Сообщество проекта
 
+<p align="center">
+  <a href="docs/photos/aurora2.jpg">
+    <img src="docs/photos/aurora2.jpg" width="200" />
+  </a>
+  <a href="docs/photos/meteor.jpg">
+    <img src="docs/photos/meteor.jpg" width="200" />
+  </a>
+</p>
+
 Эти и другие публикации timelapse доступны в группе ВКонтакте:  
 👉 [vk.com/public168611621](https://vk.com/public168611621)
 
